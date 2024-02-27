@@ -9,8 +9,11 @@ import { useParams } from "react-router-dom";
 import Paginate from "../Componets/Paginate";
 
 const HomeScreens = () => {
-  const { pageNumber } = useParams();
-  const { data, isLoading, error } = useGetProductsQuery({ pageNumber });
+  const { pageNumber, keyword } = useParams();
+  const { data, isLoading, error } = useGetProductsQuery({
+    keyword,
+    pageNumber,
+  });
 
   return (
     <>
